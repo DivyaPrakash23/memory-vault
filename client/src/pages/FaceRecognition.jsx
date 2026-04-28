@@ -7,8 +7,8 @@ import {
   extractDescriptor,
   matchFace,
   buildLabeledDescriptors,
-} from "../services/faceRecognition";
-import { speakText } from "../services/speech";
+} from "../services/faceRecognition.js";
+import { speakText } from "../services/speech.js";
 
 export default function FaceRecognition() {
   const { user }   = useSelector((s) => s.auth);
