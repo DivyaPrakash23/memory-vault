@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-800 bg-slate-50 font-sans;
+  }
+  * {
+    @apply box-border;
+  }
+}
+
+@layer utilities {
+  .animate-bounce-once {
+    animation: bounce 0.6s ease 1;
+  }
+}
+
+

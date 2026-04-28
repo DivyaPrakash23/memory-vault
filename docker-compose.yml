@@ -1,0 +1,30 @@
+
+version: "3.9"
+services:
+  server:
+    build: ./server
+    ports:
+      - "5000:5000"
+    env_file: .env
+    depends_on:
+      - redis
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+
+  client:
+    build: ./client
+    ports:
+      - "5173:5173"
+    depends_on:
+      - server
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+
